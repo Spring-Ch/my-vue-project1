@@ -81,9 +81,9 @@ export default {
       // 验证通过后发生axios请求，根据状态码弹出对应的消息框
       this.$refs.loginForm.validate(async (valid) => {
         if (!valid) {
-          return;
         } else {
           const { data: res } = await this.$http.post("login", this.loginForm);
+
           if (res.meta.status == 200) {
             this.$message.success("登录成功");
             // 1. 将登录成功之后的 token，保存到客户端的 sessionStorage 中
