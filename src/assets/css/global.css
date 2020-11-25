@@ -15,3 +15,6 @@ html,body,#app{
 .el-table-column{
     text-align: center;
 }
+.el-cascader-menu{
+    height: 240px;
+}
