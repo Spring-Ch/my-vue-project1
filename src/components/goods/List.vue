@@ -50,7 +50,11 @@
         </el-table-column>
         <el-table-column label="操作" width="180">
           <template slot-scope="scope">
-            <el-button type="primary" icon="el-icon-edit" size="mini"
+            <el-button
+              type="primary"
+              icon="el-icon-edit"
+              size="mini"
+              @click="editGoods(scope.row.goods_id)"
               >编辑</el-button
             >
             <el-button
@@ -137,6 +141,8 @@ export default {
         this.getGoodsList()
       }
     },
+    // 根据商品id，编辑对应的商品信息
+    editGoods(id) {},
     // 前往添加商品信息页面
     goAddPage() {
       this.$router.push('/goods/add')

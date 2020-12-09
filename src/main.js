@@ -7,6 +7,14 @@ import './assets/css/global.css';
 import './assets/fonts/iconfont.css';
 import Table from 'vue-table-with-tree-grid'
 
+// 导入富文本编辑器依赖
+import VueQuillEditor from 'vue-quill-editor'
+
+// 导入富文本编辑器样式
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
+
 Vue.config.productionTip = false;
 
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
@@ -29,6 +37,9 @@ Vue.filter('dateFormat', function (val) {
     const ss = (date.getSeconds() + '').padStart(2, '')
     return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 })
+
+// 注册富文本编辑器组件
+Vue.use(VueQuillEditor)
 
 new Vue({
     router,
